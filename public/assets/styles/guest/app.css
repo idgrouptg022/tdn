@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url("../../fonts/Ubuntu-Regular.ttf");
+    font-family: ubuntu-regular;
+}
+
+@font-face {
+    src: url("../../fonts/Ubuntu-Medium.ttf");
+    font-family: ubuntu-medium;
+}
+
+@font-face {
+    src: url("../../fonts/Ubuntu-Light.ttf");
+    font-family: ubuntu-light;
+}
+
+@font-face {
+    src: url("../../fonts/Ubuntu-Bold.ttf");
+    font-family: ubuntu-bold;
+}
+
+:root {
+    --primary: #006A4B;
+    --secondary: #F40732;
+    --ternary: #FFCE00;
+    --contrast-white: #FAF9F6;
+    --contrast-black: #171717;
+
+
+    /* Primary accent scale */
+    --primary-1: #0b130f;
+    --primary-2: #101b16;
+    --primary-3: #0c2e21;
+    --primary-4: #003d29;
+    --primary-5: #004b34;
+    --primary-6: #015a3f;
+    --primary-7: #026b4c;
+    --primary-8: #007f5a;
+    --primary-9: #006a4b;
+    --primary-10: #00593e;
+    --primary-11: #69cea5;
+    --primary-12: #a0f5cf;
+
+    --primary-surface: #10251b80;
+    --primary-indicator: #006a4b;
+    --primary-track: #006a4b;
+
+    /* Secondary accent scale */
+    --secondary-1: #180e0d;
+    --secondary-2: #221211;
+    --secondary-3: #400b0d;
+    --secondary-4: #590009;
+    --secondary-5: #6b000f;
+    --secondary-6: #7d111b;
+    --secondary-7: #982329;
+    --secondary-8: #c52f37;
+    --secondary-9: #f40732;
+    --secondary-10: #e40024;
+    --secondary-11: #ff8c85;
+    --secondary-12: #ffcfca;
+
+    --secondary-surface: #33131180;
+    --secondary-indicator: #f40732;
+    --secondary-track: #f40732;
+
+    /* Ternary accent scale */
+    --ternary-1: #13110b;
+    --ternary-2: #1b180f;
+    --ternary-3: #2b2206;
+    --ternary-4: #3a2a00;
+    --ternary-5: #463400;
+    --ternary-6: #544200;
+    --ternary-7: #675414;
+    --ternary-8: #826b1c;
+    --ternary-9: #ffce00;
+    --ternary-10: #f5c400;
+    --ternary-11: #ffd00c;
+    --ternary-12: #fce9b2;
+
+    --ternary-contrast: #292109;
+    --ternary-surface: #251f0e80;
+    --ternary-indicator: #ffce00;
+    --ternary-track: #ffce00;
+}
+
+body {
+    font-family: ubuntu-light, -apple-system, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--contrast-white);
+    font-size: 1rem;
+}
+
+/* Header */
+header {
+    display: none;
+}
+
+@media only screen and (min-width: 992px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        background-color: white;
+    }
+
+    .header-logo img {
+        width: 8%;
+    }
+
+    .slogan-container {
+        flex: 1 0 auto;
+    }
+
+}
+
+/* Main Content */
+main {
+    padding: 1.2rem;
+}
+
+/* Echo Content */
+.echo-container {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fefefe;
+    padding: 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.echo-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--secondary);
+    color: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-weight: 600;
+}
+
+.echo-content {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-size: .9rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: marquee;
+    z-index: 1;
+}
+
+.echo-content li {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.echo-content-item-title {
+    font-weight: 700;
+}
+
+/* @keyframes marquee {
+    0% { transform: translateX(1000%); }
+    100% { transform: translateX(-1000%); }
+} */
+
+
+/* Form items */
+input {
+    font-family: ubuntu-light, -apple-system, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.form-control {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #eee;
+    border-radius: .25rem;
+    font-size: .9rem;
+}
+
+@media only screen and (min-width: 992px) {
+    main {
+        margin-left: 4rem;
+        margin-right: 4rem;
+        background-color: white;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+

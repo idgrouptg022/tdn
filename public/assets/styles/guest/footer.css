@@ -1,0 +1,177 @@
+footer {
+    background-image: url('../../images/footer1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 27rem;
+    padding-bottom: 27rem;
+    position: relative;
+}
+
+/* .footer-cover-image {
+    position: relative;
+    width: 100%;
+}
+
+.footer-cover-image img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+} */
+
+.footer-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #015a3fc6;
+    padding: .5rem 1rem;
+}
+
+.footer-logo {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 70%;
+}
+
+.footer-subcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.3rem;
+    color: white;
+}
+
+.footer-subcontent-title {
+    font-size: 1rem;
+    font-family: ubuntu-regular;
+    color: white;
+    margin-bottom: .2rem;
+}
+
+.footer-subcontent-title::before {
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    background-color: var(--secondary-10);
+    display: inline-block;
+    margin-right: .4rem;
+}
+
+.footer-subcontent-text {
+    margin-bottom: .3rem;
+    font-size: clamp(.7rem, 0.3043rem + 2.4783vw, 2rem);
+}
+
+.footer-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.3rem;
+}
+
+.footer-grid-item-title {
+    font-size: 1.3rem;
+    font-family: ubuntu-bold;
+    color: white;
+    margin-bottom: 1.1rem;
+    margin-top: .7rem;
+}
+
+.footer-grid-item-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: .8rem;
+}
+
+.footer-grid-item-list-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-underline-offset: .3rem;
+}
+
+.footer-grid-item-list-item::before {
+    content: "";
+    width: .4rem;
+    height: .4rem;
+    background-color: var(--secondary-10);
+    display: inline-block;
+    margin-right: .4rem;
+}
+
+.copyright-footer {
+    padding: .8rem;
+    font-family: ubuntu-bold;
+    text-align: center;
+    text-wrap: balance;
+    font-size: .8rem;
+}
+
+.copyright-footer p {
+    margin-bottom: .8rem;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    footer {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5rem;
+    }
+
+    .footer-subcontent-title {
+        font-size: .8rem;
+    }
+
+    .footer-subcontent-text {
+        font-size: .7rem;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    footer {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        grid-gap: 1.5rem;
+    }
+
+    .footer-subcontent {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        align-items: flex-start;
+        margin-bottom: 1.3rem;
+        color: white;
+    }
+
+    .footer-subcontent-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-subcontent-text {
+        font-size: 1rem;
+    }
+}

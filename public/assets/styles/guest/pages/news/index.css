@@ -1,0 +1,134 @@
+.news-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-categories {
+    list-style-type: none;
+    padding-inline-start: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    background-color: var(--primary);
+    margin-top: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-radius: .25rem;
+}
+
+.news-categories::-webkit-scrollbar, .news-regions::-webkit-scrollbar {
+    display: none;
+}
+
+.news-category {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.news-category:not(:last-of-type)::after {
+    content: "|";
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.news-category a, .news-category a:is(:hover, :focus) {
+    text-decoration: none;
+    text-decoration-line: underline;
+    text-underline-offset: .3rem;
+    font-size: .9rem;
+    color: white;
+}
+
+.news-grid {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.3rem;
+}
+
+.news-grid-item {
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: .5rem;
+}
+
+.news-grid-item-image {
+    width: 100%;
+    /* height: 20rem; */
+    position: relative;
+}
+
+.news-grid-item-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.news-grid-item-region {
+    position: absolute;
+    bottom: -.5rem;
+    left: 1rem;
+    background-color: var(--secondary-10);
+    color: white;
+    padding: .4rem 1.3rem;
+}
+
+.news-grid-item-body {
+    margin-top: 1.2rem;
+    padding: 0 1rem 1.2rem 1rem;
+}
+
+.news-grid-item-published-at {
+    font-size: .8rem;
+    /* margin-bottom: 1.4rem; */
+}
+
+.news-grid-item-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    font-family: ubuntu-regular;
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+}
+
+.news-grid-item-link {
+    margin-top: .2rem;
+    display: inline-block;
+    padding: .3rem 1rem;
+    background-color: var(--ternary-9);
+    background-image: linear-gradient(to right, var(--secondary-10) 5%, 5%, var(--ternary-9));
+    text-decoration: none;
+    color: var(--contrast-black);
+    font-family: ubuntu-regular;
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 992px) {
+    .news-title {
+        flex: 1 1 70%;
+    }
+
+    .news-header form{
+        flex: 1 1 30%;
+        width: 100%;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.5rem;
+    }
+
+    .news-grid-item-title {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,282 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1.2rem;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.brand-logo img {
+    width: 50%;
+}
+
+.menu-user-container {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.menu-user-container span {
+    opacity: 0.7;
+}
+
+.client-menu {
+    text-decoration: none;
+    background-color: var(--primary);
+    padding: .5rem .8rem;
+    color: white;
+    border-radius: .5rem;
+    font-size: .8rem;
+}
+
+.navbar-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: white;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 7rem 1rem 1rem 1rem;
+}
+
+.menu-mobile {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.menu-mobile-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.menu-mobile-link {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-family: ubuntu-regular;
+}
+
+.menu-mobile-item:not(:last-of-type) {
+    border-bottom: 2px solid #ddd;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+.login-menu span {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .brand-logo img {
+        width: 15%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    nav {
+        background-color: var(--primary);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .brand-container {
+        flex-shrink: 0;
+    }
+
+    .menu-user-container {
+        flex-grow: 1;
+        justify-content: flex-end; /* Pour aligner les éléments à droite */
+    }
+
+    .menu-user-container span {
+        display: none;
+    }
+
+    .desktop-menu {
+        display: block;
+    }
+
+    .desktop-menu-list {
+        list-style-type: none;
+        padding-inline-start: 0;
+        display: inline-flex;
+        gap: 2rem;
+    }
+
+    .desktop-menu-link {
+        text-decoration: none;
+        color: white;
+        font-family: ubuntu-regular;
+    }
+
+    .desktop-menu-item.dropdown-menu {
+        position: relative;
+    }
+
+    .desktop-menu-link:is(:hover, :focus) {
+        text-decoration: none;
+        color: white;
+        font-family: ubuntu-regular;
+        background-color: #ebfef5;
+        color: var(--primary);
+        padding: 0.5rem .9rem;
+        border-radius: 1rem;
+        /* text-decoration-line: underline; */
+        /* text-underline-offset: .2rem; */
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .brand-logo {
+        display: none;
+    }
+
+    .login-menu {
+        text-decoration: none;
+        color: var(--contrast-black);
+        background-color: var(--ternary-10);
+        font-family: ubuntu-regular;
+        padding: .5rem 1rem;
+        border-radius: .2rem;
+    }
+
+    .client-menu {
+        text-decoration: none;
+        color: var(--contrast-black);
+        background-color: var(--ternary-10);
+        font-family: ubuntu-regular;
+        padding: .5rem 1rem;
+        border-radius: .2rem;
+        font-size: 1rem;
+    }
+
+
+    .login-menu img {
+        display: none;
+    }
+
+    .login-menu span {
+        display: inline;
+    }
+
+    .desktop-menu-item.dropdown-menu:hover .desktop-menu-link {
+        text-decoration: none;
+        color: white;
+        font-family: ubuntu-regular;
+        background-color: #ebfef5;
+        color: var(--primary);
+        padding: 0.5rem .9rem;
+        border-radius: 1rem;
+    }
+
+    .desktop-menu-item.dropdown-menu:hover .dropdown {
+        display: block;
+    }
+
+    /* Dropdown menu */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.99) translateY(-0.7em);
+            transform-origin: top;
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .dropdown__wrapper {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-top: 30px;
+    }
+
+    .dropdown {
+        border-radius: 8px;
+        background-color: white;
+        display: none;
+        padding: 8px;
+        width: clamp(27rem, 35rem, 40rem);
+        border: 1px solid var(--primary-12);
+        box-shadow:
+            0 50px 100px -20px rgba(0, 0, 0, .12),
+            0 30px 60px -30px rgba(0, 0, 0, .15);
+        animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .list-items-with-description {
+        list-style-type: none;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .list-items-with-description li {
+        display: flex;
+        padding: 8px;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .list-items-with-description li a {
+        text-decoration: none;
+        color: #000;
+        font-size: .78rem;
+        font-weight: 600;
+
+        &:is(:hover, :focus) {
+            color: #000;
+        }
+    }
+
+    .list-items-with-description li:hover {
+        background-color: #eee;
+        border-radius: 6px;
+    }
+
+    .list-items-with-description li svg {
+        stroke: var(--link-gray-hover);
+        stroke-width: 1px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .item-title h3 {
+        color: var(--link-gray-hover);
+    }
+
+    .item-title p {
+        font-size: 12px;
+        white-space: nowrap;
+        color: var(--link-gray);
+    }
+}
